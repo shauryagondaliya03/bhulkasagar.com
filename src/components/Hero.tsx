@@ -1,12 +1,12 @@
-import { ArrowRight, BookOpenCheck, Languages, Blocks, Medal, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Languages, Blocks, GraduationCap, Sparkles } from "lucide-react";
 import EnquiryForm from "./EnquiryForm";
 import { MEDIUMS } from "@/site";
 
 const TRUST = [
-  { icon: BookOpenCheck, text: "Nursery to Class 10" },
+  { icon: BookOpenCheck, text: "Play Group to Class 12" },
+  { icon: GraduationCap, text: "Science & Commerce (NEET/JEE focus)" },
+  { icon: Blocks, text: "Activity-based, Value-based Learning" },
   { icon: Languages, text: `${MEDIUMS.join(" & ")} Medium` },
-  { icon: Blocks, text: "Activity-based Learning" },
-  { icon: Medal, text: "Sports & Games" },
 ];
 
 export default function Hero() {
@@ -24,9 +24,9 @@ export default function Hero() {
             Nurturing little minds,{" "}
             <span className="bg-gradient-to-r from-sun-200 via-sun-300 to-sun-500 bg-clip-text italic text-transparent">building big futures.</span>
           </h1>
-          <p className="mt-3 text-xl font-medium text-forest-100/90">ભુલકા સાગર સ્કૂલ · Varachha, Surat</p>
+          <p lang="gu" className="mt-3 text-xl font-medium text-sun-200">તમારું સુંદર અને તેજસ્વી ભવિષ્ય શરૂ કરો</p>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-forest-100/90">
-            A caring neighbourhood school where children learn through activity, play and discipline — from their very first day in Nursery. Visit us and see the difference.
+            A caring school in Kapodra, Surat where children learn through activity, values and discipline — from Play Group all the way to Science and Commerce in Class 12. Visit us and see the difference.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

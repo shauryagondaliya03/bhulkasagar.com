@@ -1,18 +1,15 @@
-import Image from "next/image";
-import { Music, Medal, Blocks, Flag } from "lucide-react";
+import { Music, Medal, Blocks, PartyPopper, Compass, HeartHandshake, Users, ShieldCheck } from "lucide-react";
 import { SITE } from "@/site";
 
-const PHOTOS = [
-  { src: "/images/assembly.jpg", alt: "Students in uniform at school assembly with the school band marching", cap: "Assembly with the school band", span: "md:col-span-2 md:row-span-2", w: 1611, h: 830 },
-  { src: "/images/outdoor-games.jpg", alt: "Students playing an outdoor game in the school courtyard", cap: "Outdoor games in the courtyard", span: "", w: 1611, h: 830 },
-  { src: "/images/school-building.jpg", alt: "The school building at Samrat Society, Varachha, Surat", cap: `Our school, ${SITE.area}`, span: "", w: 1302, h: 858 },
-];
-
 const ACTIVITIES = [
+  { icon: Blocks, t: "Activity-based Learning", d: "Hands-on, activity-led teaching from Balvatika all the way to Class 12." },
+  { icon: HeartHandshake, t: "Value-based Education", d: "Sanskar with education — respect, discipline and good character in everyday school life." },
+  { icon: Compass, t: "Career Festival & Life Skills", d: "Programmes that help students discover their strengths and plan their future." },
+  { icon: Users, t: "Parent Participation", d: "Events and programmes that bring parents and teachers together for every child." },
+  { icon: ShieldCheck, t: "Safe & Caring Campus", d: "A secure, well-looked-after school environment where every child feels at home." },
   { icon: Music, t: "Assembly & School Band", d: "A disciplined, joyful start to the day with music, prayer and the school band." },
-  { icon: Medal, t: "Sports & Traditional Games", d: "Outdoor games that build fitness, teamwork and sportsmanship." },
-  { icon: Blocks, t: "Activity-based Learning", d: "Toys, colours and hands-on play make the youngest learners’ first lessons fun." },
-  { icon: Flag, t: "National Festivals", d: "Flag-hoisting and celebrations that teach pride, values and togetherness." },
+  { icon: Medal, t: "Sports & Games", d: "Outdoor games that build fitness, teamwork and sportsmanship." },
+  { icon: PartyPopper, t: "Festivals & Celebrations", d: "From Ganesh Mahotsav to national days — celebrations that build togetherness." },
 ];
 
 export default function CampusLife() {
@@ -22,16 +19,7 @@ export default function CampusLife() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-sun-600">Campus Life</p>
           <h2 className="mt-3 font-display text-4xl font-semibold tracking-tight text-forest-900 sm:text-5xl">Learning, discipline and joy — every day</h2>
-          <p className="mt-4 text-lg text-slate-600">A glimpse into life at {SITE.name}.</p>
-        </div>
-
-        <div className="mt-12 grid gap-4 md:grid-cols-3 md:grid-rows-2">
-          {PHOTOS.map((p) => (
-            <figure key={p.src} className={`group relative overflow-hidden rounded-3xl bg-forest-100 ${p.span}`}>
-              <Image src={p.src} alt={p.alt} width={p.w} height={p.h} sizes="(min-width:768px) 50vw, 100vw" className="h-full min-h-[220px] w-full object-cover transition duration-500 group-hover:scale-105" />
-              <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-forest-950/85 to-transparent p-5 pt-14 text-sm font-semibold text-white">{p.cap}</figcaption>
-            </figure>
-          ))}
+          <p className="mt-4 text-lg text-slate-600">What makes a day at {SITE.name} special.</p>
         </div>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -5,11 +5,9 @@ import { Menu, X, CalendarCheck } from "lucide-react";
 import Logo from "./Logo";
 
 const LINKS = [
+  { label: "About", href: "#about" },
   { label: "Academics", href: "#academics" },
-  { label: "Campus Life", href: "#campus-life" },
-  { label: "Events", href: "#events" },
   { label: "Gallery", href: "#gallery" },
-  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 

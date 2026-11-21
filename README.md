@@ -16,3 +16,11 @@ npm run dev     # http://localhost:3000
   `data/leads.jsonl` on your own server, and POSTed to `LEADS_WEBHOOK_URL` if you set that environment
   variable (use this on Vercel with a Google Sheets / Zapier / Make webhook).
 - Colours (forest green + sun yellow) are in `src/app/globals.css`.
+
+## v3 additions
+- **Class finder** (`ClassFinder.tsx`, `src/lib/eligibility.ts`): enter a date of birth → eligible class for the session; fills the enquiry form.
+  Age windows come from the school's admission guide. **Update `admissionYear` in `src/site.ts` every year.**
+- **Gallery** (`Gallery.tsx`): filter buttons + full-screen viewer. Add photos to `public/images/` and list them in `PHOTOS`.
+- **About, Vision & Mission, Founder** (`About.tsx`), top contact bar, FAQ accordion, mobile Call/WhatsApp/Enquire bar.
+- **FAQs** are shared by the FAQ section and the "Your Sathi" chat: edit them in `src/faqs.ts`.
+- **Hidden until configured** (in `src/site.ts`): documentary video (`video.youtubeId`), Facebook/YouTube icons (`social`), WhatsApp (`whatsapp`).

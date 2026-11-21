@@ -9,7 +9,7 @@ const gujarati = Noto_Sans_Gujarati({ subsets: ["gujarati"], variable: "--font-g
 
 export const metadata: Metadata = {
   title: `${SITE.name}, ${SITE.area} Surat | Admissions Open`,
-  description: `${SITE.name} (${SITE.gujaratiName}), ${SITE.area}, Surat — a caring school for little learners. Admissions open. Book a campus visit today.`,
+  description: `${SITE.name} (${SITE.gujaratiName}), ${SITE.area}, Surat — Balvatika to Class 12, Science & Commerce. Activity-based, value-based education. Admissions open. Book a campus visit today.`,
 };
 
 const jsonLd = {

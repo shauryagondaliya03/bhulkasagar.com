@@ -42,9 +42,6 @@ html { scroll-behavior: smooth; }
 body { @apply bg-white text-slate-700 antialiased; }
 section[id] { scroll-margin-top: 5.5rem; }
 
-.no-scrollbar { scrollbar-width: none; }
-.no-scrollbar::-webkit-scrollbar { display: none; }
-
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }

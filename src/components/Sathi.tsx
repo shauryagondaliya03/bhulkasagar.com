@@ -2,58 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { MessageCircleHeart, X, Send, Phone, CalendarCheck, Sparkles } from "lucide-react";
-import { GRADES, MEDIUMS, SITE, CLASSES_TEXT, MAP_DIRECTIONS } from "@/site";
-
-/* ---------- The 5 standard questions (edit answers here) ---------- */
-type Faq = { id: string; chip: string; q: string; a: string; keywords: string[] };
-
-const FAQS: Faq[] = [
-  {
-    id: "classes",
-    chip: "Classes & medium",
-    q: "Which classes and mediums do you offer?",
-    a: `We offer ${CLASSES_TEXT}.\n\nMedium of instruction: ${MEDIUMS.join(" and ")}.`,
-    keywords: ["class", "grade", "medium", "english", "gujarati", "nursery", "kg", "std", "standard", "secondary", "primary", "age"],
-  },
-  {
-    id: "admission",
-    chip: "Admission & fees",
-    q: "How do I apply, and what are the fees?",
-    a: `Admissions are open!\n\nFees differ by class, so our admissions team will share the exact fee structure, the documents list and the next steps for your child. Tap “Book a callback” below and we’ll call you, or ring us on ${SITE.phone.label}.`,
-    keywords: ["fee", "fees", "admission", "apply", "document", "form", "cost", "price", "seat", "eligib"],
-  },
-  {
-    id: "activities",
-    chip: "Activities & campus",
-    q: "What activities does the school offer?",
-    a: "• Morning assembly with the school band\n• Sports and traditional outdoor games\n• Activity-based learning for the little ones\n• Celebrations of national festivals and school events\n\nTap “Book a callback” and we’ll tell you more about what’s right for your child’s class.",
-    keywords: ["activit", "sport", "game", "band", "music", "facilit", "event", "festival", "play", "campus", "extra"],
-  },
-  {
-    id: "location",
-    chip: "Location & timings",
-    q: "Where is the school and what are the timings?",
-    a: `📍 ${SITE.address}\n\n🕕 ${SITE.hours}\n📞 ${SITE.phone.label}\n\nTap “Get directions” after booking a callback, or search “${SITE.name}” on Google Maps.`,
-    keywords: ["where", "location", "address", "map", "timing", "time", "hour", "open", "reach", "direction", "varachha"],
-  },
-  {
-    id: "visit",
-    chip: "Visit the campus",
-    q: "Can I visit the school before deciding?",
-    a: `Of course! Parents are always welcome to see the school and meet the teachers.\n\nTap “Book a callback” and we’ll fix a visit time that suits you, or call ${SITE.phone.label} directly.`,
-    keywords: ["visit", "tour", "meet", "see", "teacher", "principal", "call", "contact", "phone", "number"],
-  },
-];
-
-function matchFaq(text: string): Faq | undefined {
-  const t = text.toLowerCase();
-  let best: Faq | undefined, bestScore = 0;
-  for (const f of FAQS) {
-    const score = f.keywords.filter((k) => t.includes(k)).length;
-    if (score > bestScore) { best = f; bestScore = score; }
-  }
-  return best;
-}
+import { GRADES, MEDIUMS, SITE, MAP_DIRECTIONS } from "@/site";
+import { FAQS, matchFaq, type Faq } from "@/faqs";
 
 /* ---------- Chat state ---------- */
 type Msg = { id: number; from: "bot" | "user"; text: string };
@@ -160,7 +110,7 @@ export default function Sathi() {
   function answer(f: Faq, echo = true) {
     if (echo) userSay(f.q);
     setAsked((a) => (a.includes(f.q) ? a : [...a, f.q]));
-    say(f.a, 800);
+    say(f.a + (f.cta ? "\n\n" + f.cta : ""), 800);
     timers.current.push(setTimeout(() => {
       setMsgs((m) => [...m, { id: ++idRef.current, from: "bot", text: asked.length >= 1 ? "Would you like our team to call you with the exact details for your child? Tap “Book a callback” 👇" : "Anything else you’d like to know?" }]);
     }, 1900));
@@ -201,7 +151,7 @@ export default function Sathi() {
 
   return (
     <>
-      <div className="fixed bottom-4 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
+      <div className="fixed bottom-20 right-4 z-[60] flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
         {teaser && !open && (
           <div className="relative max-w-[240px] animate-fade-up rounded-2xl rounded-br-sm bg-white p-4 pr-8 text-sm font-medium text-forest-900 shadow-2xl ring-1 ring-forest-100">
             👋 Questions about admissions? Ask <b>{SITE.assistantName}</b>!

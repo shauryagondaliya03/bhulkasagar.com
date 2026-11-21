@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowRight, CheckCircle2, Loader2, ShieldCheck } from "lucide-react";
 import { GRADES, MEDIUMS } from "@/site";
 
@@ -11,6 +11,13 @@ const field =
 
 export default function EnquiryForm() {
   const [medium, setMedium] = useState<string>(MEDIUMS[0]);
+  const [gradeSel, setGradeSel] = useState("");
+
+  useEffect(() => {
+    const on = (e: Event) => { const g = (e as CustomEvent<string>).detail; if (GRADES.includes(g)) setGradeSel(g); };
+    window.addEventListener("bsv:select-grade", on);
+    return () => window.removeEventListener("bsv:select-grade", on);
+  }, []);
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
   const [serverError, setServerError] = useState("");
@@ -62,7 +69,7 @@ export default function EnquiryForm() {
 
       <div>
         <label htmlFor="grade" className="mb-1.5 block text-sm font-semibold text-forest-900">Grade Seeking Admission</label>
-        <select id="grade" name="grade" defaultValue="" className={field} aria-invalid={!!errors.grade}>
+        <select id="grade" name="grade" value={gradeSel} onChange={(e) => setGradeSel(e.target.value)} className={field} aria-invalid={!!errors.grade}>
           <option value="" disabled>Select grade</option>
           {GRADES.map((g) => <option key={g} value={g}>{g}</option>)}
         </select>

@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import Logo from "./Logo";
+import SocialIcons from "./SocialIcons";
 import { SITE } from "@/site";
 
 export default function Footer() {
@@ -8,12 +9,14 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1.3fr] lg:px-8">
         <div>
           <Logo light />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest-200/80">Nurturing confident, capable and caring learners in {SITE.area}, {SITE.city}.</p>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest-200/80">“{SITE.motto}.” Nurturing confident, capable and caring learners in Kapodra, {SITE.city}.</p>
+          <p className="mt-4 text-xs text-forest-300/70">{SITE.founder.title}: {SITE.founder.name}</p>
+          <SocialIcons className="mt-4" />
         </div>
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-sun-300">Explore</h3>
           <ul className="mt-4 space-y-2.5 text-sm">
-            {[["Admissions", "#enquiry"], ["Academics", "#academics"], ["Campus Life", "#campus-life"], ["Contact", "#contact"], ...(SITE.instagram.handle ? [["Instagram", `https://www.instagram.com/${SITE.instagram.handle}/`]] : [])].map(([l, h]) => (
+            {[["Admissions", "#enquiry"], ["About Us", "#about"], ["Academics", "#academics"], ["Class Finder", "#class-finder"], ["Gallery", "#gallery"], ["Campus Life", "#campus-life"], ["FAQ", "#faq"], ["Contact", "#contact"], ...(SITE.instagram.handle ? [["Instagram", `https://www.instagram.com/${SITE.instagram.handle}/`]] : [])].map(([l, h]) => (
               <li key={l}><a href={h} {...(h.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})} className="text-forest-200/80 transition hover:text-white">{l}</a></li>
             ))}
           </ul>

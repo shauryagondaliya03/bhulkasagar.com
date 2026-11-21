@@ -1,42 +1,41 @@
+import TopBar from "@/components/TopBar";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
+import About from "@/components/About";
 import Streams from "@/components/Streams";
-import Stats from "@/components/Stats";
-import CampusLife from "@/components/CampusLife";
-import Events from "@/components/Events";
-import Testimonials from "@/components/Testimonials";
+import ClassFinder from "@/components/ClassFinder";
 import Gallery from "@/components/Gallery";
-import FAQ from "@/components/FAQ";
+import CampusLife from "@/components/CampusLife";
+import VideoSection from "@/components/VideoSection";
+import FAQSection from "@/components/FAQSection";
 import InstagramFeed from "@/components/InstagramFeed";
 import Contact from "@/components/Contact";
 import VisitCTA from "@/components/VisitCTA";
 import Footer from "@/components/Footer";
+import MobileBar from "@/components/MobileBar";
 import Sathi from "@/components/Sathi";
-import ScrollTools from "@/components/ScrollTools";
-import { LangProvider } from "@/components/LangProvider";
 
 export default function Home() {
   return (
-    <LangProvider>
+    <>
+      <TopBar />
       <Navbar />
       <main>
         <Hero />
-        <Features />
+        <About />
         <Streams />
-        <Stats />
-        <CampusLife />
-        <Events />
-        <Testimonials />
+        <ClassFinder />
         <Gallery />
-        <FAQ />
+        <CampusLife />
+        <VideoSection />
+        <FAQSection />
         <InstagramFeed />
         <Contact />
         <VisitCTA />
       </main>
       <Footer />
+      <MobileBar />
       <Sathi />
-      <ScrollTools />
-    </LangProvider>
+    </>
   );
 }

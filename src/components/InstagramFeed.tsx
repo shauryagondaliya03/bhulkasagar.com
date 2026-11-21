@@ -34,10 +34,10 @@ export default function InstagramFeed() {
           <p className="mx-auto mt-6 max-w-md text-center text-slate-600">See classroom moments, events and celebrations on our Instagram page.</p>
         )}
         {embeds.length > 0 && (
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
             {embeds.map((src) => (
               <iframe key={src} src={src} title="Instagram post from the school" loading="lazy" allowFullScreen scrolling="no"
-                className="h-[560px] w-full rounded-2xl border border-forest-100 bg-white shadow-sm" />
+                className="h-[600px] w-full max-w-[400px] rounded-2xl border border-forest-100 bg-white shadow-sm" />
             ))}
           </div>
         )}
