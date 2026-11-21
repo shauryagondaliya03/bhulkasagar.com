@@ -7,6 +7,9 @@ import Logo from "./Logo";
 const LINKS = [
   { label: "Academics", href: "#academics" },
   { label: "Campus Life", href: "#campus-life" },
+  { label: "Events", href: "#events" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 

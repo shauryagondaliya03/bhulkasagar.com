@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1.3fr] lg:px-8">
         <div>
           <Logo light />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest-200/80">“{SITE.motto}.” Nurturing confident, capable and caring learners in Kapodra, {SITE.city}.</p>
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-forest-200/80">Nurturing confident, capable and caring learners in {SITE.area}, {SITE.city}.</p>
         </div>
         <div>
           <h3 className="text-sm font-bold uppercase tracking-wider text-sun-300">Explore</h3>

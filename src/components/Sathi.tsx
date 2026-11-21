@@ -12,8 +12,8 @@ const FAQS: Faq[] = [
     id: "classes",
     chip: "Classes & medium",
     q: "Which classes and mediums do you offer?",
-    a: `We offer ${CLASSES_TEXT}.\n\nOur Science stream has a NEET/JEE focus, and Commerce prepares students for a successful career in the field.\n\nMedium of instruction: ${MEDIUMS.join(" and ")}.`,
-    keywords: ["class", "grade", "medium", "english", "gujarati", "nursery", "balvatika", "kg", "std", "standard", "secondary", "primary", "science", "commerce", "neet", "jee", "stream", "12th"],
+    a: `We offer ${CLASSES_TEXT}.\n\nMedium of instruction: ${MEDIUMS.join(" and ")}.`,
+    keywords: ["class", "grade", "medium", "english", "gujarati", "nursery", "kg", "std", "standard", "secondary", "primary", "age"],
   },
   {
     id: "admission",
@@ -26,8 +26,8 @@ const FAQS: Faq[] = [
     id: "activities",
     chip: "Activities & campus",
     q: "What activities does the school offer?",
-    a: "• Activity-based learning from Balvatika to Class 12\n• Value-based education and life-skills programmes\n• Career festival and parent-participation programmes\n• Computer lab, sports and outdoor games\n• Morning assembly with the school band\n• Festival celebrations such as Ganesh Mahotsav\n\nTap “Book a callback” and we’ll tell you more about what’s right for your child’s class.",
-    keywords: ["activit", "computer", "lab", "sport", "game", "band", "music", "facilit", "event", "festival", "play", "campus", "extra"],
+    a: "• Morning assembly with the school band\n• Sports and traditional outdoor games\n• Activity-based learning for the little ones\n• Celebrations of national festivals and school events\n\nTap “Book a callback” and we’ll tell you more about what’s right for your child’s class.",
+    keywords: ["activit", "sport", "game", "band", "music", "facilit", "event", "festival", "play", "campus", "extra"],
   },
   {
     id: "location",
